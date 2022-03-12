@@ -7,6 +7,24 @@
 
 import Foundation
 
-class SearchViewModel {
+class SearchViewModel: ViewModel {
     
+    let searchRepository: SearchRepository
+    
+    init(searchRepository: SearchRepository = SearchRepository()) {
+        self.searchRepository = searchRepository
+    }
+    
+    func searchPhotos(searchText: String) {
+        searchRepository.searchPhotos(searchText: searchText) { [unowned self] result in
+            switch result {
+            case .failure(let error):
+                self.didErrorOccur?(error)
+                break
+            case .success(let data):
+                self.didDataChange?(data)
+                break
+            }
+        }
+    }
 }

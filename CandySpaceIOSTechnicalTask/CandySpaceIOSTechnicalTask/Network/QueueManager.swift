@@ -16,7 +16,7 @@ class QueueManager {
     
     static let shared = QueueManager()
     
-    func enqueue(_ operation: Operation) {
+    func addOperation(_ operation: Operation) {
         queue.addOperation(operation)
     }
     

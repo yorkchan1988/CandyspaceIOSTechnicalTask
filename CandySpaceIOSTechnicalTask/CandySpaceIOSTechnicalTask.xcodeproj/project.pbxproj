@@ -26,9 +26,11 @@
 		DE107FD727DCEEED004C66DB /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD627DCEEED004C66DB /* ErrorMessages.swift */; };
 		DE107FDA27DCF94C004C66DB /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD927DCF94C004C66DB /* QueueManager.swift */; };
 		DE107FDC27DCFA77004C66DB /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */; };
-		DE107FDE27DCFF04004C66DB /* SearchAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FDD27DCFF03004C66DB /* SearchAPIOperation.swift */; };
 		DE107FE127DD0B61004C66DB /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FE027DD0B61004C66DB /* SearchResults.swift */; };
 		DE107FE327DD0D17004C66DB /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FE227DD0D17004C66DB /* Hit.swift */; };
+		DE107FEB27DD173F004C66DB /* SearchAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FEA27DD173F004C66DB /* SearchAPIOperation.swift */; };
+		DE107FEE27DD178C004C66DB /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FED27DD178C004C66DB /* SearchRepository.swift */; };
+		DE107FF127DD5679004C66DB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FF027DD5679004C66DB /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +66,11 @@
 		DE107FD627DCEEED004C66DB /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		DE107FD927DCF94C004C66DB /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		DE107FDD27DCFF03004C66DB /* SearchAPIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIOperation.swift; sourceTree = "<group>"; };
 		DE107FE027DD0B61004C66DB /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		DE107FE227DD0D17004C66DB /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
+		DE107FEA27DD173F004C66DB /* SearchAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPIOperation.swift; sourceTree = "<group>"; };
+		DE107FED27DD178C004C66DB /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
+		DE107FF027DD5679004C66DB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +112,10 @@
 		DE107F8927DBCE98004C66DB /* CandySpaceIOSTechnicalTask */ = {
 			isa = PBXGroup;
 			children = (
+				DE107FEF27DD566D004C66DB /* BaseClasses */,
 				DE107FDF27DD0B3C004C66DB /* Model */,
 				DE107FD327DCEE55004C66DB /* Error */,
+				DE107FEC27DD175E004C66DB /* Repository */,
 				DE107FCF27DCE6E4004C66DB /* Network */,
 				DE107FBB27DBCF70004C66DB /* Utils */,
 				DE107FBA27DBCF4E004C66DB /* Scenes */,
@@ -172,7 +178,7 @@
 		DE107FCF27DCE6E4004C66DB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DE107FD827DCF6A6004C66DB /* api */,
+				DE107FE927DD173F004C66DB /* apiOperations */,
 				DE107FCD27DCDC56004C66DB /* NetworkManager.swift */,
 				DE107FD927DCF94C004C66DB /* QueueManager.swift */,
 				DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */,
@@ -197,14 +203,6 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		DE107FD827DCF6A6004C66DB /* api */ = {
-			isa = PBXGroup;
-			children = (
-				DE107FDD27DCFF03004C66DB /* SearchAPIOperation.swift */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
 		DE107FDF27DD0B3C004C66DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +210,30 @@
 				DE107FE227DD0D17004C66DB /* Hit.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE107FE927DD173F004C66DB /* apiOperations */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FEA27DD173F004C66DB /* SearchAPIOperation.swift */,
+			);
+			path = apiOperations;
+			sourceTree = "<group>";
+		};
+		DE107FEC27DD175E004C66DB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FED27DD178C004C66DB /* SearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DE107FEF27DD566D004C66DB /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FF027DD5679004C66DB /* ViewModel.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +340,7 @@
 			files = (
 				DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */,
 				DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */,
+				DE107FEB27DD173F004C66DB /* SearchAPIOperation.swift in Sources */,
 				DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */,
 				DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */,
 				DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */,
@@ -326,11 +349,12 @@
 				DE107FDC27DCFA77004C66DB /* NetworkOperation.swift in Sources */,
 				DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */,
 				DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */,
+				DE107FF127DD5679004C66DB /* ViewModel.swift in Sources */,
 				DE107FE327DD0D17004C66DB /* Hit.swift in Sources */,
 				DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */,
 				DE107FD727DCEEED004C66DB /* ErrorMessages.swift in Sources */,
-				DE107FDE27DCFF04004C66DB /* SearchAPIOperation.swift in Sources */,
 				DE107F8D27DBCE98004C66DB /* SceneDelegate.swift in Sources */,
+				DE107FEE27DD178C004C66DB /* SearchRepository.swift in Sources */,
 				DE107FD527DCEE61004C66DB /* NetworkError.swift in Sources */,
 				DE107FC627DBD09D004C66DB /* ImagesViewModel.swift in Sources */,
 			);
