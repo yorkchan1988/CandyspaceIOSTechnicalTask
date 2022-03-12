@@ -13,25 +13,23 @@
 		DE107F9227DBCE98004C66DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9027DBCE98004C66DB /* Main.storyboard */; };
 		DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9327DBCE9B004C66DB /* Assets.xcassets */; };
 		DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9527DBCE9B004C66DB /* LaunchScreen.storyboard */; };
-		DE107FA227DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FA127DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.swift */; };
-		DE107FAC27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FAB27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.swift */; };
-		DE107FAE27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FAD27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift */; };
 		DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FBF27DBD013004C66DB /* SearchViewModel.swift */; };
 		DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC127DBD030004C66DB /* SearchRouter.swift */; };
 		DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC327DBD093004C66DB /* ImagesViewController.swift */; };
 		DE107FC627DBD09D004C66DB /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */; };
 		DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */; };
+		DE107FCA27DCCB9E004C66DB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE107FC927DCCB9E004C66DB /* SearchViewController.xib */; };
+		DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FCB27DCDB68004C66DB /* Utils.swift */; };
+		DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FCD27DCDC56004C66DB /* NetworkManager.swift */; };
+		DE107FD227DCE9C5004C66DB /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD127DCE9C5004C66DB /* UtilsTest.swift */; };
+		DE107FD527DCEE61004C66DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD427DCEE61004C66DB /* NetworkError.swift */; };
+		DE107FD727DCEEED004C66DB /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD627DCEEED004C66DB /* ErrorMessages.swift */; };
+		DE107FDA27DCF94C004C66DB /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FD927DCF94C004C66DB /* QueueManager.swift */; };
+		DE107FDC27DCFA77004C66DB /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DE107F9E27DBCE9B004C66DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE107F7F27DBCE98004C66DB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE107F8627DBCE98004C66DB;
-			remoteInfo = CandySpaceIOSTechnicalTask;
-		};
-		DE107FA827DBCE9B004C66DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE107F7F27DBCE98004C66DB /* Project object */;
 			proxyType = 1;
@@ -50,15 +48,19 @@
 		DE107F9627DBCE9B004C66DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE107F9827DBCE9B004C66DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE107F9D27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandySpaceIOSTechnicalTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE107FA127DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySpaceIOSTechnicalTaskTests.swift; sourceTree = "<group>"; };
-		DE107FA727DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandySpaceIOSTechnicalTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE107FAB27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySpaceIOSTechnicalTaskUITests.swift; sourceTree = "<group>"; };
-		DE107FAD27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DE107FBF27DBD013004C66DB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		DE107FC127DBD030004C66DB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		DE107FC327DBD093004C66DB /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
 		DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRouter.swift; sourceTree = "<group>"; };
+		DE107FC927DCCB9E004C66DB /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		DE107FCB27DCDB68004C66DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DE107FCD27DCDC56004C66DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DE107FD127DCE9C5004C66DB /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
+		DE107FD427DCEE61004C66DB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		DE107FD627DCEEED004C66DB /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		DE107FD927DCF94C004C66DB /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +78,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE107FA427DBCE9B004C66DB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,7 +86,6 @@
 			children = (
 				DE107F8927DBCE98004C66DB /* CandySpaceIOSTechnicalTask */,
 				DE107FA027DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests */,
-				DE107FAA27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests */,
 				DE107F8827DBCE98004C66DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,7 +95,6 @@
 			children = (
 				DE107F8727DBCE98004C66DB /* CandySpaceIOSTechnicalTask.app */,
 				DE107F9D27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.xctest */,
-				DE107FA727DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +102,8 @@
 		DE107F8927DBCE98004C66DB /* CandySpaceIOSTechnicalTask */ = {
 			isa = PBXGroup;
 			children = (
+				DE107FD327DCEE55004C66DB /* Error */,
+				DE107FCF27DCE6E4004C66DB /* Network */,
 				DE107FBB27DBCF70004C66DB /* Utils */,
 				DE107FBA27DBCF4E004C66DB /* Scenes */,
 				DE107F8A27DBCE98004C66DB /* AppDelegate.swift */,
@@ -124,18 +119,9 @@
 		DE107FA027DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE107FA127DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.swift */,
+				DE107FD027DCE991004C66DB /* Utils */,
 			);
 			path = CandySpaceIOSTechnicalTaskTests;
-			sourceTree = "<group>";
-		};
-		DE107FAA27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE107FAB27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.swift */,
-				DE107FAD27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift */,
-			);
-			path = CandySpaceIOSTechnicalTaskUITests;
 			sourceTree = "<group>";
 		};
 		DE107FBA27DBCF4E004C66DB /* Scenes */ = {
@@ -150,6 +136,7 @@
 		DE107FBB27DBCF70004C66DB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DE107FCB27DCDB68004C66DB /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -160,6 +147,7 @@
 				DE107F8E27DBCE98004C66DB /* SearchViewController.swift */,
 				DE107FBF27DBD013004C66DB /* SearchViewModel.swift */,
 				DE107FC127DBD030004C66DB /* SearchRouter.swift */,
+				DE107FC927DCCB9E004C66DB /* SearchViewController.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -172,6 +160,41 @@
 				DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */,
 			);
 			path = ImagesView;
+			sourceTree = "<group>";
+		};
+		DE107FCF27DCE6E4004C66DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FD827DCF6A6004C66DB /* api */,
+				DE107FCD27DCDC56004C66DB /* NetworkManager.swift */,
+				DE107FD927DCF94C004C66DB /* QueueManager.swift */,
+				DE107FDB27DCFA77004C66DB /* NetworkOperation.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DE107FD027DCE991004C66DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FD127DCE9C5004C66DB /* UtilsTest.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE107FD327DCEE55004C66DB /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FD427DCEE61004C66DB /* NetworkError.swift */,
+				DE107FD627DCEEED004C66DB /* ErrorMessages.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		DE107FD827DCF6A6004C66DB /* api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,24 +235,6 @@
 			productReference = DE107F9D27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DE107FA627DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE107FB727DBCE9B004C66DB /* Build configuration list for PBXNativeTarget "CandySpaceIOSTechnicalTaskUITests" */;
-			buildPhases = (
-				DE107FA327DBCE9B004C66DB /* Sources */,
-				DE107FA427DBCE9B004C66DB /* Frameworks */,
-				DE107FA527DBCE9B004C66DB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE107FA927DBCE9B004C66DB /* PBXTargetDependency */,
-			);
-			name = CandySpaceIOSTechnicalTaskUITests;
-			productName = CandySpaceIOSTechnicalTaskUITests;
-			productReference = DE107FA727DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,10 +249,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					DE107F9C27DBCE9B004C66DB = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = DE107F8627DBCE98004C66DB;
-					};
-					DE107FA627DBCE9B004C66DB = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = DE107F8627DBCE98004C66DB;
 					};
@@ -268,7 +269,6 @@
 			targets = (
 				DE107F8627DBCE98004C66DB /* CandySpaceIOSTechnicalTask */,
 				DE107F9C27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests */,
-				DE107FA627DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,18 +280,12 @@
 			files = (
 				DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */,
 				DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */,
+				DE107FCA27DCCB9E004C66DB /* SearchViewController.xib in Resources */,
 				DE107F9227DBCE98004C66DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DE107F9B27DBCE9B004C66DB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE107FA527DBCE9B004C66DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,11 +301,17 @@
 			files = (
 				DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */,
 				DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */,
+				DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */,
+				DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */,
 				DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */,
+				DE107FDA27DCF94C004C66DB /* QueueManager.swift in Sources */,
+				DE107FDC27DCFA77004C66DB /* NetworkOperation.swift in Sources */,
 				DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */,
 				DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */,
 				DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */,
+				DE107FD727DCEEED004C66DB /* ErrorMessages.swift in Sources */,
 				DE107F8D27DBCE98004C66DB /* SceneDelegate.swift in Sources */,
+				DE107FD527DCEE61004C66DB /* NetworkError.swift in Sources */,
 				DE107FC627DBD09D004C66DB /* ImagesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,16 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE107FA227DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE107FA327DBCE9B004C66DB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE107FAE27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITestsLaunchTests.swift in Sources */,
-				DE107FAC27DBCE9B004C66DB /* CandySpaceIOSTechnicalTaskUITests.swift in Sources */,
+				DE107FD227DCE9C5004C66DB /* UtilsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,11 +331,6 @@
 			isa = PBXTargetDependency;
 			target = DE107F8627DBCE98004C66DB /* CandySpaceIOSTechnicalTask */;
 			targetProxy = DE107F9E27DBCE9B004C66DB /* PBXContainerItemProxy */;
-		};
-		DE107FA927DBCE9B004C66DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE107F8627DBCE98004C66DB /* CandySpaceIOSTechnicalTask */;
-			targetProxy = DE107FA827DBCE9B004C66DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -372,6 +358,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_BASE_URL = "https://pixabay.com/api/";
+				API_KEY = "13197033-03eec42c293d2323112b4cca6";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -433,6 +421,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_BASE_URL = "https://pixabay.com/api/";
+				API_KEY = "13197033-03eec42c293d2323112b4cca6";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -580,42 +570,6 @@
 			};
 			name = Release;
 		};
-		DE107FB827DBCE9B004C66DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 57JYPKMJ3X;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkcoding.CandySpaceIOSTechnicalTaskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CandySpaceIOSTechnicalTask;
-			};
-			name = Debug;
-		};
-		DE107FB927DBCE9B004C66DB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 57JYPKMJ3X;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yorkcoding.CandySpaceIOSTechnicalTaskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CandySpaceIOSTechnicalTask;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -642,15 +596,6 @@
 			buildConfigurations = (
 				DE107FB527DBCE9B004C66DB /* Debug */,
 				DE107FB627DBCE9B004C66DB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE107FB727DBCE9B004C66DB /* Build configuration list for PBXNativeTarget "CandySpaceIOSTechnicalTaskUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE107FB827DBCE9B004C66DB /* Debug */,
-				DE107FB927DBCE9B004C66DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
