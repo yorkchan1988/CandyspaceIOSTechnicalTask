@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107F8A27DBCE98004C66DB /* AppDelegate.swift */; };
-		DE107F8D27DBCE98004C66DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107F8C27DBCE98004C66DB /* SceneDelegate.swift */; };
 		DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107F8E27DBCE98004C66DB /* SearchViewController.swift */; };
-		DE107F9227DBCE98004C66DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9027DBCE98004C66DB /* Main.storyboard */; };
 		DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9327DBCE9B004C66DB /* Assets.xcassets */; };
 		DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE107F9527DBCE9B004C66DB /* LaunchScreen.storyboard */; };
 		DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FBF27DBD013004C66DB /* SearchViewModel.swift */; };
@@ -46,9 +44,7 @@
 /* Begin PBXFileReference section */
 		DE107F8727DBCE98004C66DB /* CandySpaceIOSTechnicalTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandySpaceIOSTechnicalTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE107F8A27DBCE98004C66DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE107F8C27DBCE98004C66DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE107F8E27DBCE98004C66DB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		DE107F9127DBCE98004C66DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE107F9327DBCE9B004C66DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE107F9627DBCE9B004C66DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE107F9827DBCE9B004C66DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,8 +116,6 @@
 				DE107FBB27DBCF70004C66DB /* Utils */,
 				DE107FBA27DBCF4E004C66DB /* Scenes */,
 				DE107F8A27DBCE98004C66DB /* AppDelegate.swift */,
-				DE107F8C27DBCE98004C66DB /* SceneDelegate.swift */,
-				DE107F9027DBCE98004C66DB /* Main.storyboard */,
 				DE107F9327DBCE9B004C66DB /* Assets.xcassets */,
 				DE107F9527DBCE9B004C66DB /* LaunchScreen.storyboard */,
 				DE107F9827DBCE9B004C66DB /* Info.plist */,
@@ -320,7 +314,6 @@
 				DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */,
 				DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */,
 				DE107FCA27DCCB9E004C66DB /* SearchViewController.xib in Resources */,
-				DE107F9227DBCE98004C66DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +346,6 @@
 				DE107FE327DD0D17004C66DB /* Hit.swift in Sources */,
 				DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */,
 				DE107FD727DCEEED004C66DB /* ErrorMessages.swift in Sources */,
-				DE107F8D27DBCE98004C66DB /* SceneDelegate.swift in Sources */,
 				DE107FEE27DD178C004C66DB /* SearchRepository.swift in Sources */,
 				DE107FD527DCEE61004C66DB /* NetworkError.swift in Sources */,
 				DE107FC627DBD09D004C66DB /* ImagesViewModel.swift in Sources */,
@@ -379,14 +371,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE107F9027DBCE98004C66DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE107F9127DBCE98004C66DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE107F9527DBCE9B004C66DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -530,7 +514,6 @@
 				INFOPLIST_FILE = CandySpaceIOSTechnicalTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -558,7 +541,6 @@
 				INFOPLIST_FILE = CandySpaceIOSTechnicalTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
