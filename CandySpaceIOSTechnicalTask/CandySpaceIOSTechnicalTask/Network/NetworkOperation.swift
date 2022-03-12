@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkOperation: Operation {
     
-    var completionHandler: ((_ result: Result<Data, Error>) -> Void)?
+    var completionHandler: ((_ result: Result<Codable, NetworkError>) -> Void)?
     
     private enum State {
         case ready
@@ -52,7 +52,7 @@ class NetworkOperation: Operation {
     
     /// Called to indicate that the operation is complete, and then call the opional completion handler
     /// - Parameter result: The result type
-    func complete(result: Result<Data, Error>) {
+    func complete(result: Result<Codable, NetworkError>) {
         finish()
         if !isCancelled {
             completionHandler?(result)

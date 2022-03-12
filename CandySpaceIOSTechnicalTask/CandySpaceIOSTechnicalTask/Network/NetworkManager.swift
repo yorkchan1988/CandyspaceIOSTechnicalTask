@@ -9,6 +9,11 @@ import Foundation
 
 class NetworkManager {
     
+    enum HTTPMethod: String {
+        case GET = "GET"
+        case POST = "POST"
+    }
+    
     private let timeoutIntervalForRequest = 30
     private let timeoutIntervalForResource = 30
     
@@ -26,22 +31,39 @@ class NetworkManager {
         session = URLSession(configuration: configuration)
     }
     
-    func requestData(apiPath: String, httpMethod: String, parameters:[String:String], completionHandler : @escaping (Result<Any, NetworkError>) -> ()) {
+    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<Codable, NetworkError>) -> ()) {
             
-        guard let baseURLString = baseURLString, let url = URL(string: baseURLString+apiPath) else {
-            completionHandler(.failure(NetworkError.serverError(apiPath)))
+        guard let baseURLString = baseURLString, let apiKey = getAPIKey(), var components = URLComponents(string: baseURLString+apiPath) else {
+            completionHandler(.failure(NetworkError.clientError(apiPath)))
+            return
+        }
+        
+        if httpMethod == .GET {
+            for (key, value) in parameters {
+                components.queryItems = [
+                    URLQueryItem(name: key, value: value)
+                ]
+            }
+            components.queryItems?.append(URLQueryItem(name: "key", value: apiKey))
+            components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        }
+        
+        guard let url = components.url else {
+            completionHandler(.failure(NetworkError.clientError(apiPath)))
             return
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = httpMethod
+        request.httpMethod = httpMethod.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
             
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-        } catch {
-            completionHandler(.failure(NetworkError.clientError(apiPath)))
+        if httpMethod == .POST {
+            do {
+                request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            } catch {
+                completionHandler(.failure(NetworkError.clientError(apiPath)))
+            }
         }
         
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
@@ -62,8 +84,8 @@ class NetworkManager {
             }
             
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                completionHandler(.success(json))
+                let object = try JSONDecoder().decode(responseType, from: data)
+                completionHandler(.success(object))
             } catch {
                 completionHandler(.failure(NetworkError.responseError(apiPath)))
             }
