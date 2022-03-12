@@ -12,7 +12,7 @@ class SearchAPIOperation: NetworkOperation {
     private let networkManager: NetworkManager
     private let searchText: String
     
-    init(searchText: String, networkManager: NetworkManager) {
+    init(searchText: String, networkManager: NetworkManager = NetworkManager.shared) {
         self.searchText = searchText.replacingOccurrences(of: " ", with: "+")
         self.networkManager = networkManager
     }
