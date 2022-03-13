@@ -13,7 +13,6 @@ class ImagesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: ImagesViewModel?
-    var router: ImagesRouter?
     
     private let itemsPerRow: CGFloat = 3
     private let itemsSpacing: CGFloat = 10

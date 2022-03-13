@@ -67,7 +67,7 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
         
-        print(String(format: "%@: %@ - url: %@", Date().description(with: Locale.current), #function, url.absoluteString))
+        print(String(format: "%@ - url: %@", #function, url.absoluteString))
         let task = session.dataTask(with: request as URLRequest) { [unowned self] data, response, error in
             
             guard let data = data else {
@@ -87,7 +87,7 @@ class NetworkManager: NetworkManagerProtocol {
             
             do {
                 let object = try decodeObjectFromData(responseType: responseType, data: data)
-                print(String(format: "%@: %@ - url: %@ -- success", Date().description(with: Locale.current), #function, url.absoluteString))
+                print(String(format: "%@ - url: %@ -- success", #function, url.absoluteString))
                 completionHandler(.success(object))
             } catch {
                 completionHandler(.failure(NetworkError.responseError(apiPath)))
@@ -119,7 +119,7 @@ class NetworkManager: NetworkManagerProtocol {
         }
         
         let request = URLRequest(url: url)
-        print(String(format: "%@: %@ - url: %@", Date().description(with: Locale.current), #function, url.absoluteString))
+        print(String(format: "%@ - url: %@", #function, url.absoluteString))
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard let data = data else {
@@ -132,7 +132,7 @@ class NetworkManager: NetworkManagerProtocol {
                 return
             }
             
-            print(String(format: "%@: %@ - url: %@ -- success", Date().description(with: Locale.current), #function, url.absoluteString))
+            print(String(format: "%@ - url: %@ -- success", #function, url.absoluteString))
             completionHandler(.success(data))
         }
         task.resume()

@@ -38,6 +38,8 @@
 		DE10800527DE238B004C66DB /* ImageRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800427DE238B004C66DB /* ImageRequestRepository.swift */; };
 		DE10800A27DE2C56004C66DB /* ImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800927DE2C56004C66DB /* ImageRequestOperation.swift */; };
 		DE10800C27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800B27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift */; };
+		DE10800E27DE5F6E004C66DB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800D27DE5F6E004C66DB /* ImageCache.swift */; };
+		DE10801027DE6958004C66DB /* SearchCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800F27DE6958004C66DB /* SearchCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		DE10800427DE238B004C66DB /* ImageRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestRepository.swift; sourceTree = "<group>"; };
 		DE10800927DE2C56004C66DB /* ImageRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestOperation.swift; sourceTree = "<group>"; };
 		DE10800B27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		DE10800D27DE5F6E004C66DB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		DE10800F27DE6958004C66DB /* SearchCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 			children = (
 				DE107FCB27DCDB68004C66DB /* Utils.swift */,
 				DE107FFD27DE10C5004C66DB /* AlertView.swift */,
+				DE10800D27DE5F6E004C66DB /* ImageCache.swift */,
+				DE10800F27DE6958004C66DB /* SearchCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */,
 				DE107FEB27DD173F004C66DB /* SearchAPIOperation.swift in Sources */,
 				DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */,
+				DE10801027DE6958004C66DB /* SearchCache.swift in Sources */,
 				DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */,
 				DE10800027DE13A4004C66DB /* ImageCollectionViewCell.swift in Sources */,
 				DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */,
@@ -407,6 +414,7 @@
 				DE10800527DE238B004C66DB /* ImageRequestRepository.swift in Sources */,
 				DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */,
 				DE10800C27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift in Sources */,
+				DE10800E27DE5F6E004C66DB /* ImageCache.swift in Sources */,
 				DE107FF127DD5679004C66DB /* ViewModel.swift in Sources */,
 				DE107FE327DD0D17004C66DB /* Hit.swift in Sources */,
 				DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */,
