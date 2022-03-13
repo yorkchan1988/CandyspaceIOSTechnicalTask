@@ -10,5 +10,4 @@ import Foundation
 struct Hit: Codable {
     let id: UInt
     let previewURL: String
-    let largeImageURL: String
 }
