@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="CandySpaceIOSTechnicalTask" customModuleProvider="target">
             <connections>
+                <outlet property="btnSearch" destination="xEy-f1-pdk" id="Qeu-H7-K3P"/>
+                <outlet property="loadingView" destination="4Yh-Kr-uUj" id="AA7-Wv-Rbu"/>
                 <outlet property="tfSearch" destination="ECp-1U-OTC" id="aUy-Zp-6nO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rJ8-tI-QPN"/>
             </connections>
@@ -46,14 +48,19 @@
                                 <action selector="didSearchButtonPress:" destination="-1" eventType="touchUpInside" id="nCt-cA-jMR"/>
                             </connections>
                         </button>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4Yh-Kr-uUj">
+                            <rect key="frame" x="165" y="92" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="xEy-f1-pdk" firstAttribute="top" secondItem="ECp-1U-OTC" secondAttribute="bottom" constant="20" id="BAm-wC-L6e"/>
                         <constraint firstItem="xEy-f1-pdk" firstAttribute="centerX" secondItem="LBD-tR-p9R" secondAttribute="centerX" id="IJk-Za-uMc"/>
+                        <constraint firstItem="4Yh-Kr-uUj" firstAttribute="centerY" secondItem="xEy-f1-pdk" secondAttribute="centerY" id="Le7-7v-wwW"/>
                         <constraint firstAttribute="trailing" secondItem="tT1-Iv-rLW" secondAttribute="trailing" id="ORG-du-Wgw"/>
                         <constraint firstItem="tT1-Iv-rLW" firstAttribute="leading" secondItem="LBD-tR-p9R" secondAttribute="leading" id="P8q-Gh-Lp4"/>
                         <constraint firstAttribute="bottom" secondItem="xEy-f1-pdk" secondAttribute="bottom" id="Rub-Qc-ARI"/>
+                        <constraint firstItem="4Yh-Kr-uUj" firstAttribute="centerX" secondItem="xEy-f1-pdk" secondAttribute="centerX" id="S8k-tm-SZa"/>
                         <constraint firstItem="ECp-1U-OTC" firstAttribute="leading" secondItem="LBD-tR-p9R" secondAttribute="leading" id="SMp-kc-TLN"/>
                         <constraint firstAttribute="trailing" secondItem="ECp-1U-OTC" secondAttribute="trailing" id="dcY-3K-ca5"/>
                         <constraint firstItem="ECp-1U-OTC" firstAttribute="top" secondItem="tT1-Iv-rLW" secondAttribute="bottom" constant="10" id="p3t-mz-lNx"/>
