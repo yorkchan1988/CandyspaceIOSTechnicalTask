@@ -55,7 +55,9 @@ class NetworkOperation<T:Codable>: Operation {
     func complete(result: Result<T, NetworkError>) {
         finish()
         if !isCancelled {
-            completionHandler?(result)
+            DispatchQueue.main.async { [weak self] in
+                self?.completionHandler?(result)
+            }
         }
     }
     

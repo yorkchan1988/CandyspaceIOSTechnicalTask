@@ -19,7 +19,7 @@ class SearchRepository {
     
     func searchPhotos(searchText: String, completionHandler: ((_ result: Result<SearchResults, NetworkError>) -> Void)?) {
         
-        let operation = SearchAPIOperation(searchText: searchText, networkManager: NetworkManager.shared)
+        let operation = SearchAPIOperation(searchText: searchText, networkManager: networkManager)
         operation.completionHandler = completionHandler
         QueueManager.shared.addOperation(operation)
     }

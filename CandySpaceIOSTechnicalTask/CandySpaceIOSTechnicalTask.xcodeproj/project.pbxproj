@@ -32,6 +32,9 @@
 		DE107FF427DD6910004C66DB /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FF327DD6910004C66DB /* SearchRepositoryTests.swift */; };
 		DE107FF727DD6C0C004C66DB /* FakeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FF627DD6C0C004C66DB /* FakeNetworkManager.swift */; };
 		DE107FFA27DD7115004C66DB /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FF927DD7115004C66DB /* NetworkManagerTests.swift */; };
+		DE107FFC27DE0F28004C66DB /* ImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */; };
+		DE107FFE27DE10C5004C66DB /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FFD27DE10C5004C66DB /* AlertView.swift */; };
+		DE10800027DE13A4004C66DB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		DE107FF327DD6910004C66DB /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		DE107FF627DD6C0C004C66DB /* FakeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkManager.swift; sourceTree = "<group>"; };
 		DE107FF927DD7115004C66DB /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesViewController.xib; sourceTree = "<group>"; };
+		DE107FFD27DE10C5004C66DB /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DE107FCB27DCDB68004C66DB /* Utils.swift */,
+				DE107FFD27DE10C5004C66DB /* AlertView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,9 +178,11 @@
 		DE107FBE27DBCFBE004C66DB /* ImagesView */ = {
 			isa = PBXGroup;
 			children = (
+				DE10800127DE13AA004C66DB /* CollectionViewCell */,
 				DE107FC327DBD093004C66DB /* ImagesViewController.swift */,
 				DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */,
 				DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */,
+				DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */,
 			);
 			path = ImagesView;
 			sourceTree = "<group>";
@@ -263,6 +272,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		DE10800127DE13AA004C66DB /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,6 +363,7 @@
 			files = (
 				DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */,
 				DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */,
+				DE107FFC27DE0F28004C66DB /* ImagesViewController.xib in Resources */,
 				DE107FCA27DCCB9E004C66DB /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,10 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */,
+				DE107FFE27DE10C5004C66DB /* AlertView.swift in Sources */,
 				DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */,
 				DE107FEB27DD173F004C66DB /* SearchAPIOperation.swift in Sources */,
 				DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */,
 				DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */,
+				DE10800027DE13A4004C66DB /* ImageCollectionViewCell.swift in Sources */,
 				DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */,
 				DE107FDA27DCF94C004C66DB /* QueueManager.swift in Sources */,
 				DE107FE127DD0B61004C66DB /* SearchResults.swift in Sources */,

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="CandySpaceIOSTechnicalTask" customModuleProvider="target">
             <connections>
+                <outlet property="tfSearch" destination="ECp-1U-OTC" id="aUy-Zp-6nO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rJ8-tI-QPN"/>
             </connections>
         </placeholder>
@@ -41,6 +42,9 @@
                             <state key="normal" title="Search Now">
                                 <color key="titleColor" systemColor="tintColor"/>
                             </state>
+                            <connections>
+                                <action selector="didSearchButtonPress:" destination="-1" eventType="touchUpInside" id="nCt-cA-jMR"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

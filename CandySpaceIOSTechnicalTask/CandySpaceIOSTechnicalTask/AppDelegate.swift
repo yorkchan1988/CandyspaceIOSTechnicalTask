@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let nav = UINavigationController()
         let searchView = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        let searchViewModel = SearchViewModel()
+        let searchRouter = SearchRouter(view: searchView)
+        searchView.viewModel = searchViewModel
+        searchView.router = searchRouter
         nav.viewControllers = [searchView]
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
