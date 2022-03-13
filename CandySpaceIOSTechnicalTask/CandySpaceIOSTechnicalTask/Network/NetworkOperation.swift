@@ -9,15 +9,26 @@ import Foundation
 
 class NetworkOperation<T:Any>: Operation {
     
+    /// The completionHandler that is run when the operation is complete
     var completionHandler: ((_ result: Result<T, NetworkError>) -> Void)?
     
-    private enum State {
-        case ready
-        case executing
-        case finished
+    /// Stte stored as an enum
+    private enum State: String {
+        case ready = "isReady"
+        case executing = "isExecuting"
+        case finished = "isFinished"
     }
     
-    private var state = State.ready
+    private var state = State.ready {
+        willSet {
+            willChangeValue(forKey: newValue.rawValue)
+            willChangeValue(forKey: state.rawValue)
+        }
+        didSet {
+            didChangeValue(forKey: oldValue.rawValue)
+            didChangeValue(forKey: state.rawValue)
+        }
+    }
     
     override var isReady: Bool {
         return super.isReady && state == .ready
