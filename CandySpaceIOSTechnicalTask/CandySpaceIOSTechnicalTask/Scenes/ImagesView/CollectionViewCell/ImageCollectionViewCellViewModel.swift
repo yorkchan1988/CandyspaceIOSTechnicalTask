@@ -11,7 +11,6 @@ class ImageCollectionViewCellViewModel: ViewModel {
     
     private let hit: Hit
     private let imageRequestRepository: ImageRequestRepository
-    private var isLargeImageLoaded = false
     
     init(hit: Hit, imageRequestRepository: ImageRequestRepository = ImageRequestRepository()) {
         self.hit = hit
@@ -22,22 +21,10 @@ class ImageCollectionViewCellViewModel: ViewModel {
         imageRequestRepository.loadImage(urlString: hit.previewURL) { [weak self] result in
             guard let weakSelf = self else { return }
             switch result {
-            case .failure(_):
+            case .failure(let error):
+                weakSelf.didErrorOccur?(error)
                 break
             case .success(let data):
-                if !weakSelf.isLargeImageLoaded {
-                    weakSelf.didDataChange?(data)
-                }
-                break
-            }
-        }
-        imageRequestRepository.loadImage(urlString: hit.largeImageURL) { [weak self] result in
-            guard let weakSelf = self else { return }
-            switch result {
-            case .failure(_):
-                break
-            case .success(let data):
-                weakSelf.isLargeImageLoaded = true
                 weakSelf.didDataChange?(data)
                 break
             }
