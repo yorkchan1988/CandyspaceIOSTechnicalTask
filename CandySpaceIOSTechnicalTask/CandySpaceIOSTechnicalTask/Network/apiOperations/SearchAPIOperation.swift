@@ -24,8 +24,21 @@ class SearchAPIOperation: NetworkOperation<SearchResults> {
             "image_type":"photo"
         ]
         
-        networkManager.requestData(apiPath: apiPath, httpMethod: .GET, parameters: parameters, responseType: SearchResults.self) { [weak self] result in
-            self?.complete(result: result)
+        networkManager.requestData(apiPath: apiPath, httpMethod: .GET, parameters: parameters) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                self?.complete(result: .failure(error))
+                break
+            case .success(let data):
+                do {
+                    let searchResults = try JSONDecoder().decode(SearchResults.self, from: data)
+                    self?.complete(result: .success(searchResults))
+                }
+                catch {
+                    self?.complete(result: .failure(NetworkError.responseError))
+                }
+                break
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ enum HTTPMethod: String {
 
 protocol NetworkManagerProtocol {
     
-    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ())
+    func requestData(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], completionHandler : @escaping (Result<Data, NetworkError>) -> ())
     func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ())
 }
 
@@ -38,10 +38,10 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     // MARK: API Request
-    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ()) {
+    func requestData(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], completionHandler : @escaping (Result<Data, NetworkError>) -> ()) {
             
         guard let baseURLString = baseURLString, let apiKey = getAPIKey(), var components = URLComponents(string: baseURLString+apiPath) else {
-            completionHandler(.failure(NetworkError.clientError(apiPath)))
+            completionHandler(.failure(NetworkError.clientError))
             return
         }
         
@@ -50,7 +50,7 @@ class NetworkManager: NetworkManagerProtocol {
         }
         
         guard let url = components.url else {
-            completionHandler(.failure(NetworkError.clientError(apiPath)))
+            completionHandler(.failure(NetworkError.clientError))
             return
         }
         
@@ -63,35 +63,30 @@ class NetworkManager: NetworkManagerProtocol {
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             } catch {
-                completionHandler(.failure(NetworkError.clientError(apiPath)))
+                completionHandler(.failure(NetworkError.clientError))
             }
         }
         
         print(String(format: "%@ - url: %@", #function, url.absoluteString))
-        let task = session.dataTask(with: request as URLRequest) { [unowned self] data, response, error in
+        let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard let data = data else {
-                completionHandler(.failure(NetworkError.serverError(apiPath)))
+                completionHandler(.failure(NetworkError.serverError))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                completionHandler(.failure(NetworkError.serverError(apiPath)))
+                completionHandler(.failure(NetworkError.serverError))
                 return
             }
             
             guard let mime = response.mimeType, mime == "application/json" else {
-                completionHandler(.failure(NetworkError.serverError(apiPath)))
+                completionHandler(.failure(NetworkError.serverError))
                 return
             }
             
-            do {
-                let object = try decodeObjectFromData(responseType: responseType, data: data)
-                print(String(format: "%@ - url: %@ -- success", #function, url.absoluteString))
-                completionHandler(.success(object))
-            } catch {
-                completionHandler(.failure(NetworkError.responseError(apiPath)))
-            }
+            print(String(format: "%@ - url: %@ -- success", #function, url.absoluteString))
+            completionHandler(.success(data))
             
         }
         task.resume()
@@ -106,15 +101,11 @@ class NetworkManager: NetworkManagerProtocol {
         components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
     }
     
-    func decodeObjectFromData<T:Codable>(responseType: T.Type, data: Data) throws -> T {
-        return try JSONDecoder().decode(responseType, from: data)
-    }
-    
     // MARK: Image Request
     func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ()) {
             
         guard let url = URL(string: urlString) else {
-            completionHandler(.failure(NetworkError.clientError(urlString)))
+            completionHandler(.failure(NetworkError.clientError))
             return
         }
         
@@ -123,12 +114,12 @@ class NetworkManager: NetworkManagerProtocol {
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard let data = data else {
-                completionHandler(.failure(NetworkError.serverError(urlString)))
+                completionHandler(.failure(NetworkError.serverError))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                completionHandler(.failure(NetworkError.serverError(urlString)))
+                completionHandler(.failure(NetworkError.serverError))
                 return
             }
             
