@@ -16,7 +16,7 @@ class SearchViewModel: ViewModel {
     }
     
     func searchPhotos(searchText: String) {
-        searchRepository.searchPhotos(searchText: searchText) { [unowned self] result in
+        searchRepository.searchPhotos(searchText: searchText) { [unowned self] source, result in
             switch result {
             case .failure(let error):
                 self.didErrorOccur?(error)

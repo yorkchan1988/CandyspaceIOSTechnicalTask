@@ -18,7 +18,7 @@ class ImageCollectionViewCellViewModel: ViewModel {
     }
     
     func loadImage() {
-        imageRequestRepository.loadImage(urlString: hit.previewURL) { [weak self] result in
+        imageRequestRepository.loadImage(urlString: hit.previewURL) { [weak self] source, result in
             guard let weakSelf = self else { return }
             switch result {
             case .failure(let error):

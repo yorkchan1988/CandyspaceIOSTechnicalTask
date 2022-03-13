@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-    case GET = "GET"
-    case POST = "POST"
-}
-
 protocol NetworkManagerProtocol {
     
     func requestData(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], completionHandler : @escaping (Result<Data, NetworkError>) -> ())
@@ -45,7 +40,7 @@ class NetworkManager: NetworkManagerProtocol {
             return
         }
         
-        if httpMethod == .GET {
+        if httpMethod == .get {
             constructGetUrl(parameters: parameters, apiKey: apiKey, components: &components)
         }
         
@@ -59,7 +54,7 @@ class NetworkManager: NetworkManagerProtocol {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
             
-        if httpMethod == .POST {
+        if httpMethod == .post {
             do {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
             } catch {
