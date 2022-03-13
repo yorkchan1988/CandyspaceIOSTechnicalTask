@@ -24,7 +24,7 @@ class ImageRequestRepository {
     /// - Parameter completionHandler: The completion block
     func loadImage(urlString: String, completionHandler: ((_ result: Result<Data, NetworkError>) -> Void)?) {
         
-        if let imageCache = ImageCache.shared.loadCache(urlString: urlString) {
+        if let imageCache = ImageCache.loadCache(urlString: urlString) {
             print(String(format: "%@ - urlString: %@ -- ImageCache found", #function, urlString))
             completionHandler?(.success(imageCache))
         }
@@ -38,7 +38,7 @@ class ImageRequestRepository {
                         completionHandler?(.failure(error))
                         break
                     case .success(let data):
-                        ImageCache.shared.addCache(urlString: urlString, data: data)
+                        ImageCache.addCache(urlString: urlString, data: data)
                         completionHandler?(.success(data))
                         break
                     }

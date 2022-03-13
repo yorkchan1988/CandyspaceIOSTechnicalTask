@@ -22,7 +22,7 @@ class SearchRepository {
     /// - Parameter completionHandler: The completion block
     func searchPhotos(searchText: String, completionHandler: ((_ result: Result<SearchResults, NetworkError>) -> Void)?) {
         
-        if let searchCache = SearchCache.shared.loadCache(searchText: searchText) {
+        if let searchCache = SearchCache.loadCache(searchText: searchText) {
             print(String(format: "%@ - searchText: %@ -- SearchCache found", #function, searchText))
             completionHandler?(.success(searchCache))
         }
@@ -35,7 +35,7 @@ class SearchRepository {
                     completionHandler?(.failure(error))
                     break
                 case .success(let data):
-                    SearchCache.shared.addCache(searchText: searchText, searchResults: data)
+                    SearchCache.addCache(searchText: searchText, searchResults: data)
                     completionHandler?(.success(data))
                     break
                 }

@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
-        ImageCache.shared.removeAllCache()
-        SearchCache.shared.removeAllCache()
+        ImageCache.removeAllCache()
+        SearchCache.removeAllCache()
     }
 }
 

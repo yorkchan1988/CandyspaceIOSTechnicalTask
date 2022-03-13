@@ -9,35 +9,17 @@ import Foundation
 
 class ImageCache {
     
-    private let UserDefaultKeyImageCache = "UserDefaultKeyImageCache"
-    private var memoryCache: [String: Data] = [:]
-    private let standardUserDefaults = UserDefaults.standard
+    private static var memoryCache: [String: Data] = [:]
     
-    static let shared = ImageCache()
-    
-    private init() {
-        loadFromUserDefaults()
-    }
-    
-    private func loadFromUserDefaults() {
-        if let object = standardUserDefaults.object(forKey: UserDefaultKeyImageCache) as? [String: Data] {
-            memoryCache = object
-        }
-    }
-    
-    func addCache(urlString: String, data: Data) {
+    static func addCache(urlString: String, data: Data) {
         memoryCache[urlString] = data
-        standardUserDefaults.set(memoryCache, forKey: UserDefaultKeyImageCache)
-        standardUserDefaults.synchronize()
     }
     
-    func loadCache(urlString: String) -> Data? {
+    static func loadCache(urlString: String) -> Data? {
         return memoryCache[urlString]
     }
     
-    func removeAllCache() {
+    static func removeAllCache() {
         memoryCache = [:]
-        standardUserDefaults.set(memoryCache, forKey: UserDefaultKeyImageCache)
-        standardUserDefaults.synchronize()
     }
 }

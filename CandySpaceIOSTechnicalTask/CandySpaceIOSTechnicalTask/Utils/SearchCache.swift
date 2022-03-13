@@ -9,32 +9,16 @@ import Foundation
 
 class SearchCache {
     
-    private let UserDefaultKeySearchCache = "UserDefaultKeySearchCache"
-    private var memoryCache: [String: Data] = [:]
-    private let standardUserDefaults = UserDefaults.standard
+    private static var memoryCache: [String: Data] = [:]
     
-    static let shared = SearchCache()
-    
-    private init() {
-        loadFromUserDefaults()
-    }
-    
-    private func loadFromUserDefaults() {
-        if let object = standardUserDefaults.object(forKey: UserDefaultKeySearchCache) as? [String: Data] {
-            memoryCache = object
-        }
-    }
-    
-    func addCache(searchText: String, searchResults: SearchResults) {
+    static func addCache(searchText: String, searchResults: SearchResults) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(searchResults) {
             memoryCache[searchText] = encoded
-            standardUserDefaults.set(memoryCache, forKey: UserDefaultKeySearchCache)
-            standardUserDefaults.synchronize()
         }
     }
     
-    func loadCache(searchText: String) -> SearchResults? {
+    static func loadCache(searchText: String) -> SearchResults? {
         let decoder = JSONDecoder()
         let data = memoryCache[searchText]
         if let data = data, let decoded = try? decoder.decode(SearchResults.self, from: data) {
@@ -43,9 +27,7 @@ class SearchCache {
         return nil
     }
     
-    func removeAllCache() {
+    static func removeAllCache() {
         memoryCache = [:]
-        standardUserDefaults.set(memoryCache, forKey: UserDefaultKeySearchCache)
-        standardUserDefaults.synchronize()
     }
 }
