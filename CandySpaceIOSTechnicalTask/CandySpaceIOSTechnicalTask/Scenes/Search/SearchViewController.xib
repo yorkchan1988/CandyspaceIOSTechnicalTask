@@ -48,7 +48,7 @@
                                 <action selector="didSearchButtonPress:" destination="-1" eventType="touchUpInside" id="nCt-cA-jMR"/>
                             </connections>
                         </button>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4Yh-Kr-uUj">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4Yh-Kr-uUj">
                             <rect key="frame" x="165" y="92" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
