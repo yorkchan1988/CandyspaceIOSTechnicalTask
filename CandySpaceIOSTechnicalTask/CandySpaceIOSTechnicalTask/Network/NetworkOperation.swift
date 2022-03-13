@@ -64,10 +64,11 @@ class NetworkOperation<T:Any>: Operation {
     /// Called to indicate that the operation is complete, and then call the opional completion handler
     /// - Parameter result: The result type
     func complete(result: Result<T, NetworkError>) {
-        finish()
-        if !isCancelled {
-            DispatchQueue.main.async { [weak self] in
-                self?.completionHandler?(result)
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else { return }
+            weakSelf.finish()
+            if !weakSelf.isCancelled {
+                weakSelf.completionHandler?(result)
             }
         }
     }
