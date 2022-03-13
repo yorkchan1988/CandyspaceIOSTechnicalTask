@@ -13,6 +13,8 @@ class ImageRequestRepository {
     private let queueManager: QueueManager
     private var operation: ImageRequestOperation?
     
+    // by default, assign network manager and queue manager singleton
+    // to increase the flexibility of writing unit test, I tend to inject the dependency into the constructor
     init(networkManager: NetworkManagerProtocol = NetworkManager.shared, queueManager: QueueManager = QueueManager.shared) {
         self.networkManager = networkManager
         self.queueManager = queueManager
@@ -22,11 +24,11 @@ class ImageRequestRepository {
     /// Load image either from the cache or from the network
     /// - Parameter urlString: The string of the url
     /// - Parameter completionHandler: The completion block
-    func loadImage(urlString: String, completionHandler: ((_ result: Result<Data, NetworkError>) -> Void)?) {
+    func loadImage(urlString: String, completionHandler: ((_ source: Source, _ result: Result<Data, NetworkError>) -> Void)?) {
         
         if let imageCache = ImageCache.loadCache(urlString: urlString) {
             print(String(format: "%@ - urlString: %@ -- ImageCache found", #function, urlString))
-            completionHandler?(.success(imageCache))
+            completionHandler?(.cache, .success(imageCache))
         }
         else {
             print(String(format: "%@ - urlString: %@ -- ImageCache not found", #function, urlString))
@@ -35,11 +37,11 @@ class ImageRequestRepository {
                 operation.completionHandler = { [urlString] result in
                     switch result {
                     case .failure(let error):
-                        completionHandler?(.failure(error))
+                        completionHandler?(.network, .failure(error))
                         break
                     case .success(let data):
                         ImageCache.addCache(urlString: urlString, data: data)
-                        completionHandler?(.success(data))
+                        completionHandler?(.network, .success(data))
                         break
                     }
                 }

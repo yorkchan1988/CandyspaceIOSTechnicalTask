@@ -12,6 +12,8 @@ class ImageRequestOperation: NetworkOperation<Data> {
     private let networkManager: NetworkManagerProtocol
     private let urlString: String
     
+    // by default, assign network manager and queue manager singleton
+    // to increase the flexibility of writing unit test, I tend to inject the dependency into the constructor
     init(urlString: String, networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.urlString = urlString
         self.networkManager = networkManager

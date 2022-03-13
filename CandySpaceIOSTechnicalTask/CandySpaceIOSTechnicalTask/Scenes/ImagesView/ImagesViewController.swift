@@ -24,6 +24,9 @@ class ImagesViewController: UIViewController {
     }
 }
 
+// TODO: if pagination is implemented, another api call with incremented page should be called if the user scrolls to like 80% from the bottom
+// TODO: Also, all pending image request api call should be cancelled if the collection view is being scrolled to prevent redundent API calls
+// TODO: The image request api call should be resumed if the collection view stops scrolling
 extension ImagesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -12,6 +12,7 @@ class SearchCache {
     
     private static var memoryCache: [String: Data] = [:]
     
+    // TODO: if pageination is implemenated, need to use search text + page as a combined key
     static func addCache(searchText: String, searchResults: SearchResults) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(searchResults) {
