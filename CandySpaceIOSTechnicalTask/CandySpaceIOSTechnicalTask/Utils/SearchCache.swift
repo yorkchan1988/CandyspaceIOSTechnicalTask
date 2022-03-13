@@ -45,5 +45,7 @@ class SearchCache {
     
     func removeAllCache() {
         memoryCache = [:]
+        standardUserDefaults.set(memoryCache, forKey: UserDefaultKeySearchCache)
+        standardUserDefaults.synchronize()
     }
 }

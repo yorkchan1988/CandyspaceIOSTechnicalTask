@@ -37,5 +37,7 @@ class ImageCache {
     
     func removeAllCache() {
         memoryCache = [:]
+        standardUserDefaults.set(memoryCache, forKey: UserDefaultKeyImageCache)
+        standardUserDefaults.synchronize()
     }
 }
