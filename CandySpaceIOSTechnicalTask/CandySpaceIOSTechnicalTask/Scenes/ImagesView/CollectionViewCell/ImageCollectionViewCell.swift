@@ -31,10 +31,19 @@ class ImageCollectionViewCell: UICollectionViewCell {
                         weakSelf.imageView.image = image
                     }
                 }
+                viewModel.didErrorOccur = { [weak self] error in
+                    guard let weakSelf = self else { return }
+                    weakSelf.isLoading = false
+                }
                 isLoading = true
                 viewModel.loadImage()
             }
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
     }
     
     deinit {
