@@ -15,7 +15,6 @@
 		DE107FC227DBD030004C66DB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC127DBD030004C66DB /* SearchRouter.swift */; };
 		DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC327DBD093004C66DB /* ImagesViewController.swift */; };
 		DE107FC627DBD09D004C66DB /* ImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */; };
-		DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */; };
 		DE107FCA27DCCB9E004C66DB /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE107FC927DCCB9E004C66DB /* SearchViewController.xib */; };
 		DE107FCC27DCDB68004C66DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FCB27DCDB68004C66DB /* Utils.swift */; };
 		DE107FCE27DCDC56004C66DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FCD27DCDC56004C66DB /* NetworkManager.swift */; };
@@ -63,7 +62,6 @@
 		DE107FC127DBD030004C66DB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		DE107FC327DBD093004C66DB /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewModel.swift; sourceTree = "<group>"; };
-		DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRouter.swift; sourceTree = "<group>"; };
 		DE107FC927DCCB9E004C66DB /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		DE107FCB27DCDB68004C66DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DE107FCD27DCDC56004C66DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				DE10800127DE13AA004C66DB /* CollectionViewCell */,
 				DE107FC327DBD093004C66DB /* ImagesViewController.swift */,
 				DE107FC527DBD09D004C66DB /* ImagesViewModel.swift */,
-				DE107FC727DBD0AC004C66DB /* ImagesRouter.swift */,
 				DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */,
 			);
 			path = ImagesView;
@@ -410,7 +407,6 @@
 				DE10800527DE238B004C66DB /* ImageRequestRepository.swift in Sources */,
 				DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */,
 				DE10800C27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift in Sources */,
-				DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */,
 				DE107FF127DD5679004C66DB /* ViewModel.swift in Sources */,
 				DE107FE327DD0D17004C66DB /* Hit.swift in Sources */,
 				DE107FC027DBD013004C66DB /* SearchViewModel.swift in Sources */,
