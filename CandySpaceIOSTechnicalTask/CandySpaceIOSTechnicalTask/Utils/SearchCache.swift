@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: could do file cache also
 class SearchCache {
     
     private static var memoryCache: [String: Data] = [:]
