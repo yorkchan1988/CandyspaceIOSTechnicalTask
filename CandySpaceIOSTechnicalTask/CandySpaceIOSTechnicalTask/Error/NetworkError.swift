@@ -8,20 +8,20 @@
 import Foundation
 
 enum NetworkError  {
-    case serverError(String)
-    case responseError(String)
-    case clientError(String)
+    case serverError
+    case responseError
+    case clientError
 }
 
 extension NetworkError : LocalizedError, Equatable {
     public var errorDescription: String? {
         switch self {
-        case .serverError(let apiPath):
-            return apiPath + "-" + networkServerErrorMessage
-        case .responseError(let apiPath):
-            return apiPath + " - " + networkResponseErrorMessage
-        case .clientError(let apiPath):
-            return apiPath + " - " + networkClientErrorMessage
+        case .serverError:
+            return networkServerErrorMessage
+        case .responseError:
+            return networkResponseErrorMessage
+        case .clientError:
+            return networkClientErrorMessage
         }
     }
 }
