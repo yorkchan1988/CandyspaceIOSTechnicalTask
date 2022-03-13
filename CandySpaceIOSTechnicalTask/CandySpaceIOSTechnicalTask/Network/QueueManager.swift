@@ -11,6 +11,7 @@ class QueueManager {
     
     lazy var queue: OperationQueue = {
         let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 3;
         return queue;
     }()
     

@@ -7,12 +7,17 @@
 
 import Foundation
 
-class NetworkManager {
+enum HTTPMethod: String {
+    case GET = "GET"
+    case POST = "POST"
+}
+
+protocol NetworkManagerProtocol {
     
-    enum HTTPMethod: String {
-        case GET = "GET"
-        case POST = "POST"
-    }
+    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ())
+}
+
+class NetworkManager: NetworkManagerProtocol {
     
     private let timeoutIntervalForRequest = 30
     private let timeoutIntervalForResource = 30
@@ -31,7 +36,7 @@ class NetworkManager {
         session = URLSession(configuration: configuration)
     }
     
-    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<Codable, NetworkError>) -> ()) {
+    func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ()) {
             
         guard let baseURLString = baseURLString, let apiKey = getAPIKey(), var components = URLComponents(string: baseURLString+apiPath) else {
             completionHandler(.failure(NetworkError.clientError(apiPath)))
@@ -39,13 +44,7 @@ class NetworkManager {
         }
         
         if httpMethod == .GET {
-            for (key, value) in parameters {
-                components.queryItems = [
-                    URLQueryItem(name: key, value: value)
-                ]
-            }
-            components.queryItems?.append(URLQueryItem(name: "key", value: apiKey))
-            components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            constructGetUrl(parameters: parameters, apiKey: apiKey, components: &components)
         }
         
         guard let url = components.url else {
@@ -66,7 +65,7 @@ class NetworkManager {
             }
         }
         
-        let task = session.dataTask(with: request as URLRequest) { data, response, error in
+        let task = session.dataTask(with: request as URLRequest) { [unowned self] data, response, error in
             
             guard let data = data else {
                 completionHandler(.failure(NetworkError.serverError(apiPath)))
@@ -84,7 +83,7 @@ class NetworkManager {
             }
             
             do {
-                let object = try JSONDecoder().decode(responseType, from: data)
+                let object = try decodeObjectFromData(responseType: responseType, data: data)
                 completionHandler(.success(object))
             } catch {
                 completionHandler(.failure(NetworkError.responseError(apiPath)))
@@ -92,5 +91,18 @@ class NetworkManager {
             
         }
         task.resume()
+    }
+    
+    func constructGetUrl(parameters:[String:String], apiKey: String, components: inout URLComponents) {
+        components.queryItems = []
+        for (key, value) in parameters {
+            components.queryItems?.append(URLQueryItem(name: key, value: value))
+        }
+        components.queryItems?.append(URLQueryItem(name: "key", value: apiKey))
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+    }
+    
+    func decodeObjectFromData<T:Codable>(responseType: T.Type, data: Data) throws -> T {
+        return try JSONDecoder().decode(responseType, from: data)
     }
 }
