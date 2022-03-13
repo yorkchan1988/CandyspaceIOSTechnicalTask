@@ -31,5 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
     }
+    
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        ImageCache.shared.removeAllCache()
+        SearchCache.shared.removeAllCache()
+    }
 }
 
