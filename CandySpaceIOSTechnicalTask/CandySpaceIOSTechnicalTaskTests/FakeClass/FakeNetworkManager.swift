@@ -16,4 +16,9 @@ class FakeNetworkManager: NetworkManagerProtocol {
         
         completionHandler(.success(searchResults as! T))
     }
+    
+    func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ()) {
+        
+        completionHandler(.success(Data()))
+    }
 }
