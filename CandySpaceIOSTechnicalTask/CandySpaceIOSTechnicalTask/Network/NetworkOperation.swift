@@ -42,6 +42,10 @@ class NetworkOperation<T:Any>: Operation {
         return state == .finished
     }
     
+    override var isAsynchronous: Bool {
+        return true
+    }
+    
     /// Start the NSOperation
     override func start() {
         guard !isCancelled else {
