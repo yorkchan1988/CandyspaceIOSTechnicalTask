@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        
+        // TODO: To optimize the clearing cache feature, FILO - remove the cache which has the earliest creation time
         ImageCache.removeAllCache()
         SearchCache.removeAllCache()
     }
