@@ -9,4 +9,13 @@ import Foundation
 
 class ImagesRouter {
     
+    weak var view: ImagesViewController?
+    
+    init(view: ImagesViewController) {
+        self.view = view
+    }
+    
+    func back() {
+        view?.navigationController?.popViewController(animated: true)
+    }
 }

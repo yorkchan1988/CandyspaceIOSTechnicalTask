@@ -15,6 +15,7 @@ enum HTTPMethod: String {
 protocol NetworkManagerProtocol {
     
     func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ())
+    func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ())
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -36,6 +37,7 @@ class NetworkManager: NetworkManagerProtocol {
         session = URLSession(configuration: configuration)
     }
     
+    // MARK: API Request
     func requestData<T:Codable>(apiPath: String, httpMethod: HTTPMethod, parameters:[String:String], responseType: T.Type, completionHandler : @escaping (Result<T, NetworkError>) -> ()) {
             
         guard let baseURLString = baseURLString, let apiKey = getAPIKey(), var components = URLComponents(string: baseURLString+apiPath) else {
@@ -65,6 +67,7 @@ class NetworkManager: NetworkManagerProtocol {
             }
         }
         
+        print(String(format: "%@: %@ - url: %@", Date().description(with: Locale.current), #function, url.absoluteString))
         let task = session.dataTask(with: request as URLRequest) { [unowned self] data, response, error in
             
             guard let data = data else {
@@ -84,6 +87,7 @@ class NetworkManager: NetworkManagerProtocol {
             
             do {
                 let object = try decodeObjectFromData(responseType: responseType, data: data)
+                print(String(format: "%@: %@ - url: %@ -- success", Date().description(with: Locale.current), #function, url.absoluteString))
                 completionHandler(.success(object))
             } catch {
                 completionHandler(.failure(NetworkError.responseError(apiPath)))
@@ -104,5 +108,33 @@ class NetworkManager: NetworkManagerProtocol {
     
     func decodeObjectFromData<T:Codable>(responseType: T.Type, data: Data) throws -> T {
         return try JSONDecoder().decode(responseType, from: data)
+    }
+    
+    // MARK: Image Request
+    func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ()) {
+            
+        guard let url = URL(string: urlString) else {
+            completionHandler(.failure(NetworkError.clientError(urlString)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        print(String(format: "%@: %@ - url: %@", Date().description(with: Locale.current), #function, url.absoluteString))
+        let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
+            guard let data = data else {
+                completionHandler(.failure(NetworkError.serverError(urlString)))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                completionHandler(.failure(NetworkError.serverError(urlString)))
+                return
+            }
+            
+            print(String(format: "%@: %@ - url: %@ -- success", Date().description(with: Locale.current), #function, url.absoluteString))
+            completionHandler(.success(data))
+        }
+        task.resume()
     }
 }

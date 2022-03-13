@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkOperation<T:Codable>: Operation {
+class NetworkOperation<T:Any>: Operation {
     
     var completionHandler: ((_ result: Result<T, NetworkError>) -> Void)?
     

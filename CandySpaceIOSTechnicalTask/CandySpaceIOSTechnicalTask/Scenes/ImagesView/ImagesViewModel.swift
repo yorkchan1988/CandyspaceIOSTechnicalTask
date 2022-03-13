@@ -7,6 +7,11 @@
 
 import Foundation
 
-class ImagesViewModel {
+class ImagesViewModel: ViewModel {
     
+    let datasource: [Hit]
+    
+    init(datasource: [Hit]) {
+        self.datasource = datasource
+    }
 }

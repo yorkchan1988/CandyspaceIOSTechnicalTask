@@ -6,3 +6,27 @@
 //
 
 import Foundation
+import UIKit
+
+class ImageCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var viewModel: ImageCollectionViewCellViewModel? {
+        didSet {
+            if let viewModel = viewModel {
+                viewModel.didDataChange = { [weak self] data in
+                    guard let weakSelf = self else { return }
+                    if let data = data as? Data, let image = UIImage(data: data) {
+                        weakSelf.imageView.image = image
+                    }
+                }
+                viewModel.loadImage()
+            }
+        }
+    }
+    
+    deinit {
+        viewModel?.cancelImageLoading()
+    }
+}

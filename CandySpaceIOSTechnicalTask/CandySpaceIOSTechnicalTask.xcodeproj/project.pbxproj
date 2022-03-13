@@ -35,6 +35,10 @@
 		DE107FFC27DE0F28004C66DB /* ImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */; };
 		DE107FFE27DE10C5004C66DB /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FFD27DE10C5004C66DB /* AlertView.swift */; };
 		DE10800027DE13A4004C66DB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */; };
+		DE10800327DE149F004C66DB /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE10800227DE149F004C66DB /* ImageCollectionViewCell.xib */; };
+		DE10800527DE238B004C66DB /* ImageRequestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800427DE238B004C66DB /* ImageRequestRepository.swift */; };
+		DE10800A27DE2C56004C66DB /* ImageRequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800927DE2C56004C66DB /* ImageRequestOperation.swift */; };
+		DE10800C27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800B27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		DE107FFB27DE0F27004C66DB /* ImagesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesViewController.xib; sourceTree = "<group>"; };
 		DE107FFD27DE10C5004C66DB /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE10800227DE149F004C66DB /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE10800427DE238B004C66DB /* ImageRequestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestRepository.swift; sourceTree = "<group>"; };
+		DE10800927DE2C56004C66DB /* ImageRequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestOperation.swift; sourceTree = "<group>"; };
+		DE10800B27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DE107FEA27DD173F004C66DB /* SearchAPIOperation.swift */,
+				DE10800927DE2C56004C66DB /* ImageRequestOperation.swift */,
 			);
 			path = apiOperations;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				DE107FED27DD178C004C66DB /* SearchRepository.swift */,
+				DE10800427DE238B004C66DB /* ImageRequestRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				DE107FFF27DE13A4004C66DB /* ImageCollectionViewCell.swift */,
+				DE10800B27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift */,
+				DE10800227DE149F004C66DB /* ImageCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -361,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE10800327DE149F004C66DB /* ImageCollectionViewCell.xib in Resources */,
 				DE107F9727DBCE9B004C66DB /* LaunchScreen.storyboard in Resources */,
 				DE107F9427DBCE9B004C66DB /* Assets.xcassets in Resources */,
 				DE107FFC27DE0F28004C66DB /* ImagesViewController.xib in Resources */,
@@ -382,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE10800A27DE2C56004C66DB /* ImageRequestOperation.swift in Sources */,
 				DE107FC427DBD093004C66DB /* ImagesViewController.swift in Sources */,
 				DE107FFE27DE10C5004C66DB /* AlertView.swift in Sources */,
 				DE107F8F27DBCE98004C66DB /* SearchViewController.swift in Sources */,
@@ -393,7 +407,9 @@
 				DE107FDA27DCF94C004C66DB /* QueueManager.swift in Sources */,
 				DE107FE127DD0B61004C66DB /* SearchResults.swift in Sources */,
 				DE107FDC27DCFA77004C66DB /* NetworkOperation.swift in Sources */,
+				DE10800527DE238B004C66DB /* ImageRequestRepository.swift in Sources */,
 				DE107F8B27DBCE98004C66DB /* AppDelegate.swift in Sources */,
+				DE10800C27DE43C9004C66DB /* ImageCollectionViewCellViewModel.swift in Sources */,
 				DE107FC827DBD0AC004C66DB /* ImagesRouter.swift in Sources */,
 				DE107FF127DD5679004C66DB /* ViewModel.swift in Sources */,
 				DE107FE327DD0D17004C66DB /* Hit.swift in Sources */,

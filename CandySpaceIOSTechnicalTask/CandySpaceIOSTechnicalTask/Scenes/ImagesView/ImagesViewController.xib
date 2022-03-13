@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagesViewController" customModule="CandySpaceIOSTechnicalTask" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="vqY-sQ-Azf" id="V41-1n-pVL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5GR-SO-eV7"/>
             </connections>
         </placeholder>
@@ -28,6 +29,10 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6tY-US-0Rs"/>
+                        <outlet property="delegate" destination="-1" id="zrN-kU-ZwB"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

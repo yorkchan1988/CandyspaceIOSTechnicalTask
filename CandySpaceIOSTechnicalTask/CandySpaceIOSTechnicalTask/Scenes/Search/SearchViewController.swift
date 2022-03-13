@@ -17,7 +17,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.didDataChange = { [unowned self] data in
-            router?.goToImagesView()
+            if let searchResults = data as? SearchResults {
+                router?.goToImagesView(searchResults: searchResults)
+            }
         }
         viewModel?.didErrorOccur = { [unowned self] error in
             AlertView.showErrorAlert(error: error, target: self)
