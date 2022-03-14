@@ -15,36 +15,31 @@ class SearchViewController: UIViewController {
     
     var viewModel: SearchViewModel?
     var router: SearchRouter?
-    var isSearching: Bool = false {
-        didSet {
-            btnSearch.isHidden = isSearching
-            loadingView.isHidden = !isSearching
-            loadingView.startAnimating()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // set initial state
-        isSearching = false
+        loadingView.isHidden = true
         
         // bind the viewModel
         viewModel?.didDataChange = { [unowned self] data in
-            isSearching = false
             if let searchResults = data as? SearchResults {
                 router?.goToImagesView(searchResults: searchResults)
             }
         }
+        viewModel?.didLoadingStatusChange = { [unowned self] isLoading in
+            btnSearch.isHidden = isLoading
+            loadingView.isHidden = !isLoading
+            loadingView.startAnimating()
+        }
         viewModel?.didErrorOccur = { [unowned self] error in
-            isSearching = false
             AlertView.showErrorAlert(error: error, target: self)
         }
     }
     
     @IBAction func didSearchButtonPress(_ sender: Any) {
         if let text = tfSearch.text, !text.isEmpty {
-            isSearching = true
             viewModel?.searchPhotos(searchText: text)
         }
     }

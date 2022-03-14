@@ -12,14 +12,18 @@ class ImageCollectionViewCellViewModel: ViewModel {
     private let hit: Hit
     private let imageRequestRepository: ImageRequestRepository
     
+    var didLoadingStatusChange: ((Bool) -> ())?
+    
     init(hit: Hit, imageRequestRepository: ImageRequestRepository = ImageRequestRepository()) {
         self.hit = hit
         self.imageRequestRepository = imageRequestRepository
     }
     
     func loadImage() {
+        didLoadingStatusChange?(true)
         imageRequestRepository.loadImage(urlString: hit.previewURL) { [weak self] source, result in
             guard let weakSelf = self else { return }
+            weakSelf.didLoadingStatusChange?(false)
             switch result {
             case .failure(let error):
                 weakSelf.didErrorOccur?(error)
