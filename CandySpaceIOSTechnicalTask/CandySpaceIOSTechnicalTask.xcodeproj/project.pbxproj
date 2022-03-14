@@ -41,6 +41,7 @@
 		DE10800E27DE5F6E004C66DB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800D27DE5F6E004C66DB /* ImageCache.swift */; };
 		DE10801027DE6958004C66DB /* SearchCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800F27DE6958004C66DB /* SearchCache.swift */; };
 		DE10801227DEA828004C66DB /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801127DEA828004C66DB /* GlobalEnums.swift */; };
+		DE10801427DEB901004C66DB /* ImageRequestRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801327DEB901004C66DB /* ImageRequestRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		DE10800D27DE5F6E004C66DB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		DE10800F27DE6958004C66DB /* SearchCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCache.swift; sourceTree = "<group>"; };
 		DE10801127DEA828004C66DB /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
+		DE10801327DEB901004C66DB /* ImageRequestRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				DE107FF327DD6910004C66DB /* SearchRepositoryTests.swift */,
+				DE10801327DEB901004C66DB /* ImageRequestRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				DE107FFA27DD7115004C66DB /* NetworkManagerTests.swift in Sources */,
 				DE107FD227DCE9C5004C66DB /* UtilsTests.swift in Sources */,
 				DE107FF427DD6910004C66DB /* SearchRepositoryTests.swift in Sources */,
+				DE10801427DEB901004C66DB /* ImageRequestRepositoryTests.swift in Sources */,
 				DE107FF727DD6C0C004C66DB /* FakeNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

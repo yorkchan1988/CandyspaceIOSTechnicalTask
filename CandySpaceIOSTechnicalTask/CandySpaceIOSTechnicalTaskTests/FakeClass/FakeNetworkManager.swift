@@ -21,6 +21,12 @@ class FakeNetworkManager: NetworkManagerProtocol {
     
     func requestImage(urlString: String, completionHandler : @escaping (Result<Data, NetworkError>) -> ()) {
         
-        completionHandler(.success(Data()))
+        do {
+            let data = try Data(contentsOf: URL(string: "https://cdn.pixabay.com/photo/2016/01/08/05/24/sunflower-1127174_150.jpg")!)
+            completionHandler(.success(data))
+        }
+        catch {
+            completionHandler(.failure(NetworkError.clientError))
+        }
     }
 }

@@ -17,7 +17,7 @@ class SearchRepositoryTests: XCTestCase {
         // GIVEN
         let networkManager = FakeNetworkManager()
         let repository = SearchRepository(networkManager: networkManager)
-        ImageCache.removeAllCache()
+        SearchCache.removeAllCache()
         
         // WHEN
         let expectation = expectation(description: "Test Search Photos API")
@@ -47,7 +47,7 @@ class SearchRepositoryTests: XCTestCase {
         // GIVEN
         let networkManager = FakeNetworkManager()
         let repository = SearchRepository(networkManager: networkManager)
-        ImageCache.removeAllCache()
+        SearchCache.removeAllCache()
         
         // WHEN
         let expectation = expectation(description: "Test Search Photos API")
