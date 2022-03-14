@@ -42,6 +42,8 @@
 		DE10801027DE6958004C66DB /* SearchCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10800F27DE6958004C66DB /* SearchCache.swift */; };
 		DE10801227DEA828004C66DB /* GlobalEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801127DEA828004C66DB /* GlobalEnums.swift */; };
 		DE10801427DEB901004C66DB /* ImageRequestRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801327DEB901004C66DB /* ImageRequestRepositoryTests.swift */; };
+		DE10801627DEBE35004C66DB /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801527DEBE35004C66DB /* ImageCacheTests.swift */; };
+		DE10801827DEC03B004C66DB /* SearchCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10801727DEC03B004C66DB /* SearchCacheTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		DE10800F27DE6958004C66DB /* SearchCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCache.swift; sourceTree = "<group>"; };
 		DE10801127DEA828004C66DB /* GlobalEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEnums.swift; sourceTree = "<group>"; };
 		DE10801327DEB901004C66DB /* ImageRequestRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestRepositoryTests.swift; sourceTree = "<group>"; };
+		DE10801527DEBE35004C66DB /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
+		DE10801727DEC03B004C66DB /* SearchCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCacheTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				DE107FD127DCE9C5004C66DB /* UtilsTests.swift */,
+				DE10801527DEBE35004C66DB /* ImageCacheTests.swift */,
+				DE10801727DEC03B004C66DB /* SearchCacheTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -438,8 +444,10 @@
 			files = (
 				DE107FFA27DD7115004C66DB /* NetworkManagerTests.swift in Sources */,
 				DE107FD227DCE9C5004C66DB /* UtilsTests.swift in Sources */,
+				DE10801827DEC03B004C66DB /* SearchCacheTests.swift in Sources */,
 				DE107FF427DD6910004C66DB /* SearchRepositoryTests.swift in Sources */,
 				DE10801427DEB901004C66DB /* ImageRequestRepositoryTests.swift in Sources */,
+				DE10801627DEBE35004C66DB /* ImageCacheTests.swift in Sources */,
 				DE107FF727DD6C0C004C66DB /* FakeNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

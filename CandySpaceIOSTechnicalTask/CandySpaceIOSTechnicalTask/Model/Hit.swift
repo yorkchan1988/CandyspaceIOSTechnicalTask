@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hit: Codable {
+struct Hit: Codable, Equatable {
     let id: UInt
     let previewURL: String
 }

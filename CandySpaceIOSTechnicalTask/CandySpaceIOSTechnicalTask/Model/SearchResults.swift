@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SearchResults: Codable {
+struct SearchResults: Codable, Equatable {
     let hits: [Hit]
 }
