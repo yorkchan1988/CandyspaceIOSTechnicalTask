@@ -24,7 +24,7 @@ class SearchAPIOperation: NetworkOperation<SearchResults> {
         let parameters = [
             "q":searchText,
             "image_type":"photo",
-            "per_page":"100"
+            "per_page":"60"
         ]
         
         networkManager.requestData(apiPath: apiPath, httpMethod: .get, parameters: parameters) { [weak self] result in
