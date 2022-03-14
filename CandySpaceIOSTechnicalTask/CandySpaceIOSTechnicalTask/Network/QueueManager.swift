@@ -19,7 +19,6 @@ class QueueManager {
     
     func addOperation(_ operation: Operation) {
         queue.addOperation(operation)
-        print(queue.operationCount)
     }
     
     func addOperations(_ operations: [Operation]) {
